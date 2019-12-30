@@ -1,4 +1,7 @@
 #include <signal.h>
+#ifndef NDEBUG
+#warning Debug build is not advised!
+#endif
 
 int main(int argc, char *argv[]) {
 
