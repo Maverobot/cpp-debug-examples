@@ -3,6 +3,7 @@
 **Table of Contents**
 
 - [cpp-debug-examples](#cpp-debug-examples)
+    - [Core dump setup](#core-dump-setup)
     - [GDB commands](#gdb-commands)
     - [GDB shortcuts](#gdb-shortcuts)
 
@@ -12,6 +13,20 @@
 A few things to keep in mind:
 * During development, always build project with RelWithDebInfo to create core file when segmentation fault happens.
 * Research on how to create core files without terminating the program.
+
+## Core dump setup
+
+```sh
+# Change core file name format.
+sudo sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t
+
+# Dumping core file is activated after the following command.
+# It must be called in every shell session.
+ulimit -c unlimited
+
+# To debug a program with dumped core file with gdb, run
+gdb program core
+```
 
 
 ## GDB commands
