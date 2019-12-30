@@ -12,6 +12,7 @@
 
 A few things to keep in mind:
 * During development, always build project with RelWithDebInfo to create core file when segmentation fault happens.
+* If the program functions weirdly, run `gdb -p ${PID_OF_PROGRAM}` to attach gdb to the running program. `sudo` might be needed.
 * Research on how to create core files without terminating the program.
 
 ## Core dump setup
